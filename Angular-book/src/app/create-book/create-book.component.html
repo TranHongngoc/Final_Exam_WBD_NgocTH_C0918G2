@@ -1,0 +1,25 @@
+<p><a routerLink="">Home</a></p>
+
+<h2>Danh sách đọc</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let book of books" >
+    <td>{{book.name}}</td>
+    <td><a *ngIf="book.read" routerLink="create">Đã đọc</a></td>
+  </tr>
+</table>
+
+<form [formGroup]="postForm" (ngSubmit)="addNewBook()">
+<label><input type="text" formControlName="name">
+  <select>
+    <option>Đã đọc</option>
+    <option>Chua đọc</option>
+  </select>
+<button type="submit">Add</button></label>
+  </form>
+
+
+

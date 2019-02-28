@@ -1,0 +1,14 @@
+<p><a routerLink="">Home</a></p>
+
+<h2>Danh sách đọc</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let book of books" >
+    <td>{{book.name}}</td>
+    <td><a *ngIf="!book.read" routerLink="read">Chưa đọc</a></td>
+  </tr>
+</table>
+
